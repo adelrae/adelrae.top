@@ -1,0 +1,293 @@
+@font-face {
+    font-family: Plus Jakarta Sans;
+    src: url(/src/fonts/plus-jakarta-sans/PlusJakartaSans-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Plus Jakarta Sans;
+    src: url(/src/fonts/plus-jakarta-sans/PlusJakartaSans-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+:root {
+    --background-co: #0F0C15;
+    --light-co: #ffffff;
+}
+
+body, html {
+    font-family: Plus Jakarta Sans, sans-serif;
+    overflow-x: hidden;
+
+}
+
+body {
+    background-color: var(--background-co);
+    color: var(--light-co);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-co);
+}
+
+.flex {
+    display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+.items-center {
+    align-items: center;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.gap-4 {
+    gap: 4rem;
+}
+.gap-3 {
+    gap: 3rem;
+}
+.gap-2 {
+    gap: 2rem;
+}
+.gap-1 {
+    gap: 1rem;
+}
+
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+
+
+// ========================= UNIQUE CSS =========================
+
+.main__content {
+    padding: 4.5rem 2rem;
+
+    .top__content .message {
+        .status {
+            border-radius: 52px;
+
+            .status__out--ic {
+                top: -1.5rem;
+                right: -1.5rem;
+            }
+            .status--message {
+                background: rgba(255, 255, 255, 0.07);
+                color: rgba(255, 255, 255, 0.45);
+                padding: .75rem 1.5rem;
+                border-radius: 52px;
+                box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.10);
+                font-size: 1.25rem;
+                font-weight: 400;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 50px; 
+                    border: 1px solid transparent;
+                    background: linear-gradient(45deg,rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.2)) border-box;
+                    -webkit-mask:
+                      linear-gradient(#fff 0 0) padding-box, 
+                      linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: destination-out;
+                    mask-composite: exclude;
+                }
+            }
+        }
+        .main--title {
+            background: -webkit-radial-gradient(circle, rgba(255,255,255,0) 0%, #ffffff 100%) -73rem 0/56% 100%,
+            -webkit-linear-gradient(79deg, transparent 0%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 5.75rem;
+            text-transform: capitalize;
+            font-weight: 600;
+            text-align: center;
+
+            .highlight {
+                background: -webkit-linear-gradient(329deg, #ffffff 6%, #376df8 49%, #fd6f55 66%, #f69e59 82%) 118% 29%/100% 79%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+
+    .social__links {
+        li {
+            padding: 0 1.5rem;
+        }
+        li:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 7px;
+            height: 7px;
+            background-color: rgba(255,255,255, .10);
+            border-radius: 99px;
+        }
+    }
+}
+
+.background__gradients {
+    inset: 0;
+    z-index: -1;
+
+    .ellipse {
+        filter: blur(217px);
+        border-radius: 999px;
+    }
+    .ellipse__1 {
+        width: 300px;
+        height: 300px;
+        background: #F69E59;
+        bottom: 0;
+        right: 3rem;
+        animation: ellipse__1 20s cubic-bezier(0.165, 0.84, 0.44, 3) infinite;
+    }
+    .ellipse__2 {
+        width: 327px;
+        height: 327px;
+        background: rgba(255, 53, 17, 0.70);
+        top: 10rem;
+        right: -5rem;
+        animation: ellipse__2 20s cubic-bezier(0.165, 0.84, 0.44, 3) infinite;
+    }
+    .ellipse__3 {
+        width: 320px;
+        height: 320px;
+        background: #18C37D;
+        top: -4rem;
+        right: 10rem;
+        animation: ellipse__3 20s cubic-bezier(0.165, 0.84, 0.44, 3) infinite;
+    }
+    .ellipse__4 {
+        width: 357px;
+        height: 357px;
+        background: rgba(55, 109, 248, 0.80);
+        top: 4rem;
+        right: 30rem;
+        animation: ellipse__4 20s cubic-bezier(0.165, 0.84, 0.44, 3) infinite;
+    }
+}
+
+.underline__pattern {
+    left: 50%;
+    bottom: calc(50% - 9rem);
+    transform: translateX(-50%);
+}
+
+// ========================= KEY FRAMES =========================
+@keyframes ellipse__1 {
+    0% {
+        bottom: 0;
+        right: 3rem;
+    }
+    50% {
+        bottom: 20rem;
+        right: -5rem;
+    }
+    100% {
+        bottom: 0;
+        right: 3rem;
+    }
+}
+
+@keyframes ellipse__2 {
+    0% {
+        top: 10rem;
+        right: -5rem;
+    }
+    50% {
+        top: -4rem;
+        right: 10rem;
+    }
+    100% {
+        top: 10rem;
+        right: -5rem;
+    }
+}
+
+@keyframes ellipse__3 {
+    0% {
+        top: 10rem;
+        right: -5rem;
+    }
+    50% {
+        top: 4rem;
+        right: 30rem;
+    }
+    100% {
+        top: 10rem;
+        right: -5rem;
+    }
+}
+
+@keyframes ellipse__4 {
+    0% {
+        top: 4rem;
+        right: 30rem;
+    }
+    50% {
+        top: 10rem;
+        right: -5rem;
+    }
+    100% {
+        top: 4rem;
+        right: 30rem;
+    }
+}
+
+// ========================= MEDIA QUERIES =========================
+@media (max-width: 768px) {
+    .main__content {
+        padding: 2rem 2rem;
+        justify-content: start;
+
+        .top__content .message .main--title {
+            font-size: 4rem;
+        }
+
+        .social__links {
+            margin-top: 4rem;
+
+            li {
+                padding: 0 1rem;
+            }
+        }
+    }
+
+    .background__gradients, .underline__pattern {
+        display: none;
+    }
+}
